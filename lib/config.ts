@@ -1,48 +1,54 @@
 import { ColorScheme, StartScreenPrompt, ThemeOption } from "@openai/chatkit";
 
+// 🥁 Workflow-ID für Ruma (kommt aus dem Agent Builder)
 export const WORKFLOW_ID =
   process.env.NEXT_PUBLIC_CHATKIT_WORKFLOW_ID?.trim() ?? "";
 
+// Session Endpoint
 export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
-// 🌸 Start-Screen Buttons (deutsche Version, ohne Icons = kein Fehler)
+// ⭐ Start-Screen Buttons (Label + Prompt getrennt)
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
     label: "Konzerte",
-    prompt: "Wann und wo spielt Ruedi als Nächstes live? Bitte die nächsten Konzerte von Silverhead, Polo Sélection und John & John Xpanded prüfen.",
+    prompt:
+      "Wann und wo spielt Ruedi als Nächstes live? Bitte die nächsten Konzerte von Silverhead, Polo Sélection und John & John Xpanded prüfen."
   },
   {
     label: "Bands buchen",
-    prompt: "Können wir dich oder deine Bands für ein Event buchen? Bitte erkläre kurz die Möglichkeiten und wie man dich erreichen kann.",
+    prompt:
+      "Können wir dich oder deine Bands für ein Event buchen? Bitte erkläre kurz die Möglichkeiten und wie man dich erreichen kann."
   },
   {
     label: "Schlagzeugunterricht",
-    prompt: "Unterrichtest du auch Erwachsene am Schlagzeug? Bitte erkläre wo, wie und wie man dich kontaktieren kann.",
-  },
+    prompt:
+      "Unterrichtest du auch Erwachsene am Schlagzeug? Bitte erkläre wo, wie und wie man dich kontaktieren kann."
+  }
 ];
 
-// 💬 Platzhaltertext im Eingabefeld
+// Eingabefeld-Text
 export const PLACEHOLDER_INPUT = "Frag mich etwas...";
 
-// 💐 Begrüssung im Chat
+// 👋 Begrüssungstext
 export const GREETING =
-  "Bonjour & herzlich willkommen in der Brocanterie Fleurie 🌸 Wie kann ich dir heute helfen?";
+  "Hallo! Ich bin Ruma – dein persönlicher Chatbot rund um Musik, Konzerte & Schlagzeugunterricht 🥁 Wie kann ich dir helfen?";
 
-// 🎨 Design- und Farbthema
+// 🎨 Design- und Farbkonfiguration
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
       hue: 220,
       tint: 6,
-      shade: theme === "dark" ? -1 : -4,
+      shade: theme === "dark" ? -1 : -4
     },
     accent: {
-      primary: theme === "dark" ? "#f1f5f9" : "#0f172a",
-      level: 1,
-    },
+      primary: theme === "dark" ? "#1F3117" : "#1F3117",
+      level: 1
+    }
   },
-  radius: "round",
+  radius: "round"
 });
+
 
 
 
