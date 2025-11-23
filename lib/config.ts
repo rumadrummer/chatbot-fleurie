@@ -31,7 +31,7 @@ export const PLACEHOLDER_INPUT = "Frag mich etwas...";
 
 // 👋 Begrüssungstext
 export const GREETING =
-  "Hallo! Ich bin Ruma – dein persönlicher Chatbot rund um Musik, Konzerte & Schlagzeugunterricht 🥁 Wie kann ich dir helfen?";
+  "Grüezi 🌸 Ich bin Fleurie! Hast du Fragen zu Café, Brocante oder Öffnungszeiten?";
 
 // 🎨 Design- und Farbkonfiguration
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
