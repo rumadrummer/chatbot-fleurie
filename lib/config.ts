@@ -1,53 +1,59 @@
 import { ColorScheme, StartScreenPrompt, ThemeOption } from "@openai/chatkit";
 
-// 🥁 Workflow-ID für Ruma (kommt aus dem Agent Builder)
+// ☕ Workflow-ID für den Fleurie Chatbot
 export const WORKFLOW_ID =
   process.env.NEXT_PUBLIC_CHATKIT_WORKFLOW_ID?.trim() ?? "";
 
 // Session Endpoint
 export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
-// ⭐ Start-Screen Buttons (Label + Prompt getrennt)
+// 🌸 Startscreen Buttons & Prompts
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
-    label: "Konzerte",
+    label: "Öffnungszeiten",
     prompt:
-      "Wann und wo spielt Ruedi als Nächstes live? Bitte die nächsten Konzerte von Silverhead, Polo Sélection und John & John Xpanded prüfen."
+      "Wie sind die Öffnungszeiten der Brocanterie Fleurie?"
   },
   {
-    label: "Bands buchen",
+    label: "Brocante-Artikel",
     prompt:
-      "Können wir dich oder deine Bands für ein Event buchen? Bitte erkläre kurz die Möglichkeiten und wie man dich erreichen kann."
+      "Welche Brocante-Artikel bietet ihr an? Bitte ein paar Beispiele beschreiben."
   },
   {
-    label: "Schlagzeugunterricht",
+    label: "Café & Getränke",
     prompt:
-      "Unterrichtest du auch Erwachsene am Schlagzeug? Bitte erkläre wo, wie und wie man dich kontaktieren kann."
+      "Was kann man im Café der Brocanterie Fleurie trinken und essen? Bitte kurz erklären."
+  },
+  {
+    label: "Reservieren / Kontakt",
+    prompt:
+      "Wie kann ich euch kontaktieren oder reservieren? Bitte Kontaktmöglichkeiten nennen."
   }
 ];
 
-// Eingabefeld-Text
+// 🌸 Placeholder im Eingabefeld
 export const PLACEHOLDER_INPUT = "Frag mich etwas...";
 
 // 👋 Begrüssungstext
 export const GREETING =
   "Grüezi 🌸 Ich bin Fleurie! Hast du Fragen zu Café, Brocante oder Öffnungszeiten?";
 
-// 🎨 Design- und Farbkonfiguration
+// 🎨 Farben & Styling: Fleurie Theme
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
-      hue: 220,
-      tint: 6,
-      shade: theme === "dark" ? -1 : -4
+      hue: 320, // etwas wärmer für Fleurie
+      tint: 8,
+      shade: theme === "dark" ? -1 : -3
     },
     accent: {
-      primary: theme === "dark" ? "#1F3117" : "#1F3117",
-      level: 1
+      primary: "#E5C4CF", // Rosa Akzentfarbe für den Fleurie-Stil
+      level: 2
     }
   },
   radius: "round"
 });
+
 
 
 
