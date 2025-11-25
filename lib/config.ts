@@ -1,58 +1,59 @@
 import { ColorScheme, StartScreenPrompt, ThemeOption } from "@openai/chatkit";
 
-// ☕ Workflow-ID für den Fleurie Chatbot
+// 🌸 Workflow-ID für Fleurie (bleibt gleich wie bisher)
 export const WORKFLOW_ID =
   process.env.NEXT_PUBLIC_CHATKIT_WORKFLOW_ID?.trim() ?? "";
 
-// Session Endpoint
+// Session Endpoint für ChatKit
 export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
-// 🌸 Startscreen Buttons & Prompts
+// 🌷 Start-Buttons für Fleurie
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
     label: "Öffnungszeiten",
     prompt:
-      "Wie sind die Öffnungszeiten der Brocanterie Fleurie?"
+      "Wie sind die aktuellen Öffnungszeiten der Brocanterie Fleurie? Bitte freundlich und kompakt antworten."
   },
   {
     label: "Brocante-Artikel",
     prompt:
-      "Welche Brocante-Artikel bietet ihr an? Bitte ein paar Beispiele beschreiben."
+      "Welche Brocante-Artikel und besonderen Stücke gibt es in der Brocanterie Fleurie? Beschreibe kurz das Sortiment."
+  },
+  {
+    label: "Blumen & Dekoration",
+    prompt:
+      "Welche Blumen, Sträusse und Deko-Ideen bietet die Brocanterie Fleurie? Beschreibe den Stil und was Besucher erwartet."
   },
   {
     label: "Café & Getränke",
     prompt:
-      "Was kann man im Café der Brocanterie Fleurie trinken und essen? Bitte kurz erklären."
-  },
-  {
-    label: "Reservieren / Kontakt",
-    prompt:
-      "Wie kann ich euch kontaktieren oder reservieren? Bitte Kontaktmöglichkeiten nennen."
+      "Was gibt es im Café der Brocanterie Fleurie an Kaffee, Kuchen und Getränken? Stelle das Angebot gemütlich und einladend dar."
   }
 ];
 
-// 🌸 Placeholder im Eingabefeld
-export const PLACEHOLDER_INPUT = "Frag mich etwas...";
+// Eingabefeld-Text
+export const PLACEHOLDER_INPUT = "Frag mich etwas…";
 
 // 👋 Begrüssungstext
 export const GREETING =
-  "Grüezi 🌸 Ich bin Fleurie! Hast du Fragen zu Café, Brocante oder Öffnungszeiten?";
+  "Grüezi 🌸 Ich bin Fleurie! Hast du Fragen zu Café, Brocante, Blumen oder Öffnungszeiten?";
 
-// 🎨 Farben & Styling: Fleurie Theme
+// 🎨 Design- und Farbkonfiguration (zartes Rosa & Grün)
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
-      hue: 320, // etwas wärmer für Fleurie
-      tint: 8,
-      shade: theme === "dark" ? -1 : -3
+      hue: 220,
+      tint: 6,
+      shade: theme === "dark" ? -1 : -4
     },
     accent: {
-      primary: "#E5C4CF", // Rosa Akzentfarbe für den Fleurie-Stil
-      level: 2
+      primary: theme === "dark" ? "#1F3117" : "#1F3117",
+      level: 1
     }
   },
   radius: "round"
 });
+
 
 
 
